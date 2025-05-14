@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="card">
+    <h1>🔐 Password Generator</h1>
+
+    <div class="input-group">
+      <label>Password Length</label>
+      <input type="range" id="length" min="4" max="32" value="12" oninput="lengthValue.innerText = this.value">
+      <span id="lengthValue">12</span>
+    </div>
+
+    <div class="options">
+      <label><input type="checkbox" id="lowercase" checked> Lowercase (a-z)</label>
+      <label><input type="checkbox" id="uppercase" checked> Uppercase (A-Z)</label>
+      <label><input type="checkbox" id="numbers" checked> Numbers (0-9)</label>
+      <label><input type="checkbox" id="symbols" checked> Symbols (!@#$...)</label>
+    </div>
+
+    <button id="generate">Generate Password</button>
+
+    <div class="result-box">
+      <input type="text" id="result" readonly placeholder="Your password will appear here">
+      <i id="copy" class="fas fa-copy" title="Copy to clipboard"></i>
+    </div>
+
+    <div id="strength">Strength: <span id="strengthValue">-</span></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
